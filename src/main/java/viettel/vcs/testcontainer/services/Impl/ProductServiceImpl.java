@@ -10,16 +10,19 @@ import viettel.vcs.testcontainer.services.ProductService;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    public void setClientRepository(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
     @Override
     public List<Product> findAllProducts() {
         return productRepository.findAll();
     }
 
     @Override
-    public Product addProduct() {
-        return productRepository.save(new Product("hehe"));
+    public Product addProduct(String name) {
+        return productRepository.save(new Product(name));
     }
 }

@@ -15,7 +15,6 @@ public abstract class DatabaseTest {
     private static final PostgreSQLContainer<?> database = new PostgreSQLContainer<>("postgres:12.9-alpine");
 
     public static class DataSourceInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-
         @Override
         public void initialize(ConfigurableApplicationContext applicationContext) {
             TestPropertySourceUtils.addInlinedPropertiesToEnvironment(

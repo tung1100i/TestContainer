@@ -5,5 +5,5 @@ import viettel.vcs.testcontainer.entities.Product;
 
 public interface ProductService {
     List<Product> findAllProducts();
-    Product addProduct();
+    Product addProduct(String name);
 }
